@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePostRequest extends FormRequest
+class StoreTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StorePostRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,16 +24,7 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => "required|min:4|max:150",
-            "content" => "max:65535",
-            "image" => "nullable|url|max:255",
-            "type_id" => "nullable|exists:types,id"
-        ];
-    }
-    public function messages()
-    {
-        return [
-            "title.required" => "Ogni post deve avere un titolo"
+            //
         ];
     }
 }

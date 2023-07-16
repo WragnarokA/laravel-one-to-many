@@ -29,10 +29,18 @@
         <label for="content">Content</label>
     </div>
 
-    <div class="form-floating mb-5">
+    <div class="form-floating mb-3">
         <input type="text" name="image"  id="image" value="{{ old("image") }}" class="form-control"  placeholder="Image">
         <label for="image">Image</label>
     </div>
+
+    <select class="form-select mb-5" name="type_id" id="type_id" aria-label="Default select example">
+        <option selected disabled >Open this Type menu</option>
+        @foreach ($types as $type)
+        <option value="{{ $type->id }}">{{ $type->name }}</option>
+            
+        @endforeach
+      </select>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
